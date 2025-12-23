@@ -21,6 +21,7 @@ import { Sparkles, PlusCircle, X, Pencil, Save, Loader2 } from "lucide-react";
 import { improveWithAI } from "@/actions/resume";
 import { toast } from "sonner";
 import useFetch from "@/hooks/use-fetch";
+import { MonthPicker } from "@/components/ui/month-picker";
 
 const formatDisplayDate = (dateString) => {
   if (!dateString) return "";
@@ -167,10 +168,12 @@ export function EntryForm({ type, entries, onChange }) {
 
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <Input
-                  type="month"
-                  {...register("startDate")}
+                <label className="text-sm font-medium">Start Date</label>
+                <MonthPicker
+                  value={watch("startDate")}
+                  onChange={(value) => setValue("startDate", value)}
                   error={errors.startDate}
+                  placeholder="Select start date"
                 />
                 {errors.startDate && (
                   <p className="text-sm text-red-500">
@@ -179,11 +182,13 @@ export function EntryForm({ type, entries, onChange }) {
                 )}
               </div>
               <div className="space-y-2">
-                <Input
-                  type="month"
-                  {...register("endDate")}
+                <label className="text-sm font-medium">End Date</label>
+                <MonthPicker
+                  value={watch("endDate")}
+                  onChange={(value) => setValue("endDate", value)}
                   disabled={current}
                   error={errors.endDate}
+                  placeholder="Select end date"
                 />
                 {errors.endDate && (
                   <p className="text-sm text-red-500">
