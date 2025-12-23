@@ -4,7 +4,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-> **Full Stack AI Career Coach built with React 19 + Next.js 15, Tailwind CSS, NeonDB, Prisma, Clerk Authentication, Inngest, Gemini API, and Shadcn UI.**  
+> **Full Stack AI Career Coach built with React 19 + Next.js 15, Tailwind CSS, NeonDB, Prisma, Clerk Authentication, Inngest, Ollama (Local AI), and Shadcn UI.**
 > A **cutting-edge AI-driven career platform** that provides **personalized job recommendations, AI resume reviews, and real-time career insights** to help users land their dream job.  
 
 ![EdgeCareer Banner](https://github.com/amitkumardemo/EdgeCareer/blob/main/EdgeCareers.png)
@@ -40,12 +40,12 @@
 
 ## 🌟 Key Features  
 
-✅ **AI-Powered Resume Builder** – Uses Gemini API for deep insights  
-✅ **Secure Authentication** – Implemented with **Clerk**  
-✅ **Real-Time Industry Insights** – Managed via **Gemini API**
+✅ **AI-Powered Resume Builder** – Uses Ollama (Local AI) for deep insights
+✅ **Secure Authentication** – Implemented with **Clerk**
+✅ **Real-Time Industry Insights** – Managed via **Ollama (Local AI)**
 ✅ **AI Powered Cover Letter Gnerator** – Only Enter job Role*One click enough*
 
-✅ **AI-Powered Interview** – Uses Gemini API for deep insights & and find your error give suggestion   
+✅ **AI-Powered Interview** – Uses Ollama (Local AI) for deep insights & and find your error give suggestion   
 
 ✅ **Interactive UI** – Built with **Shadcn UI & Tailwind CSS**  
 ✅ **Event-Driven Architecture** – Powered by **Inngest** for async processing  
@@ -62,7 +62,7 @@
 | **NeonDB & Prisma** | Database & ORM |
 | **Clerk Authentication** | Secure login & access control |
 | **Inngest** | Background job processing |
-| **Gemini API** | AI-powered career guidance |
+| **Ollama** | Local AI models for career guidance |
 | **Vercel** | Deployment & hosting |
 
 ---
@@ -79,7 +79,17 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
 
-GEMINI_API_KEY=
+# Ollama Configuration (Local AI)
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.2
+```
+
+**Note:** Make sure you have [Ollama](https://ollama.ai) installed and running locally with the llama3.2 model downloaded. You can install Ollama and download the model with:
+```bash
+# Install Ollama from https://ollama.ai
+
+# Pull the llama3.2 model
+ollama pull llama3.2
 ```
 
 ---
